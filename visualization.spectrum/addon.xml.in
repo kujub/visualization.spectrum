@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="visualization.spectrum"
-  version="21.0.0"
+  version="21.20240523"
   name="Spectrum"
-  provider-name="Team Kodi">
+  provider-name="kujub, Team Kodi">
   <requires>@ADDON_DEPENDS@</requires>
   <extension
     point="xbmc.player.musicviz"
