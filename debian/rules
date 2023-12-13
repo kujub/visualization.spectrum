@@ -12,8 +12,17 @@
 %:
 	dh $@
 
+## kujub LOCAL
+## use Release build type for optimization
+## * -O3 instead of -O2 for kissfft
+## * -Ofast for main code - see ../CMakeLists.txt
+
+## override_dh_auto_configure:
+##	dh_auto_configure -- -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_SHARED_LIBS=1 -DUSE_LTO=1
 override_dh_auto_configure:
-	dh_auto_configure -- -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_SHARED_LIBS=1 -DUSE_LTO=1
+	dh_auto_configure -- -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=1 -DUSE_LTO=1
+
+##
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=kodi-visualization-spectrum

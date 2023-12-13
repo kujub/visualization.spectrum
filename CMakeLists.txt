@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
 project(visualization.spectrum)
 
+## kujub LOCAL
+## Release: use -Ofast (-O3 + -ffast-math and more) for opengl_spectrum.cpp
+## Note: for build type see debian/rules
+
+set(CMAKE_CXX_FLAGS_RELEASE "-Ofast -Wall")
+
+##
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR})
 
 find_package(Kodi REQUIRED)
